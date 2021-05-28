@@ -12,6 +12,10 @@
 - `node <filename>`
 ##### Test request to server
 - `curl http://localhost:4400`
+
+## Test Results
+
+- Node version: v12.22.1
 ### 1. Bare http module performance
 
 `npm run start-http`
