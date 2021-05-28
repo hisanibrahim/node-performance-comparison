@@ -31,7 +31,7 @@ Req/Bytes counts sampled once per second.
 
 ```
 
-### 1. Express.js performance
+### 2. Express.js performance
 
 `npm run start-express`
 
@@ -56,4 +56,31 @@ Req/Bytes counts sampled once per second.
 Req/Bytes counts sampled once per second.
 
 266k requests in 30.01s, 61.4 MB read
+```
+
+### 3. Fastify.js performance
+
+`npm run start-fastify`
+
+#### Result
+
+```log
+10 connections
+
+┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+│ Latency │ 0 ms │ 0 ms │ 0 ms  │ 0 ms │ 0.01 ms │ 0.11 ms │ 18 ms │
+└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
+├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+│ Req/Sec   │ 18863   │ 18863   │ 27711   │ 31615   │ 27597.87 │ 2655.79 │ 18855   │
+├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+│ Bytes/Sec │ 3.17 MB │ 3.17 MB │ 4.66 MB │ 5.31 MB │ 4.64 MB  │ 446 kB  │ 3.17 MB │
+└───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+
+Req/Bytes counts sampled once per second.
+
+828k requests in 30.01s, 139 MB read
 ```
