@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-http": "node http.js & ( autocannon http://localhost:4400/ -d 30s && kill $(lsof -t -i :4400) )"
+    "start-http": "node http.js & npm test",
+    "start-express": "node express.js & npm test",
+    "test": "autocannon http://localhost:4400/ -d 30s && kill $(lsof -t -i :4400)"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "autocannon": "^7.3.0"
+    "autocannon": "^7.3.0",
+    "express": "^4.17.1"
   }
 }
