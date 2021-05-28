@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-http": "node http.js & ( autocannon http://localhost:4400/ -d 30s && kill $(lsof -t -i :4400) )"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "autocannon": "^7.3.0"
+  }
 }
