@@ -1,15 +1,24 @@
 
 ## Get started
 
-`npm install`
+##### Install dependencies
 
+- `npm install`
+##### Run a file
+    - http.js
+    - express.js
+    - fastify.js
+    - koa.js
+- `node <filename>`
+##### Test request to server
+- `curl http://localhost:4400`
 ### 1. Bare http module performance
 
 `npm run start-http`
-
 #### Result
 
 ```log
+Running 30s test @ http://localhost:4400/
 10 connections
 
 ┌─────────┬──────┬──────┬───────┬──────┬─────────┬────────┬───────┐
@@ -38,6 +47,7 @@ Req/Bytes counts sampled once per second.
 #### Result
 
 ```log
+Running 30s test @ http://localhost:4400/
 10 connections
 
 ┌─────────┬──────┬──────┬───────┬──────┬─────────┬────────┬───────┐
@@ -65,6 +75,7 @@ Req/Bytes counts sampled once per second.
 #### Result
 
 ```log
+Running 30s test @ http://localhost:4400/
 10 connections
 
 ┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
@@ -83,4 +94,31 @@ Req/Bytes counts sampled once per second.
 Req/Bytes counts sampled once per second.
 
 828k requests in 30.01s, 139 MB read
+```
+### 4. Koa.js performance
+
+`npm run start-koa`
+
+#### Result
+
+```log
+Running 30s test @ http://localhost:4400/
+10 connections
+
+┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+│ Latency │ 0 ms │ 0 ms │ 1 ms  │ 1 ms │ 0.06 ms │ 0.27 ms │ 18 ms │
+└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
+├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+│ Req/Sec   │ 10839   │ 10839   │ 19775   │ 21583   │ 19469.07 │ 1941.72 │ 10837   │
+├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+│ Bytes/Sec │ 1.82 MB │ 1.82 MB │ 3.32 MB │ 3.62 MB │ 3.27 MB  │ 326 kB  │ 1.82 MB │
+└───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+
+Req/Bytes counts sampled once per second.
+
+584k requests in 30.01s, 98.1 MB read
 ```

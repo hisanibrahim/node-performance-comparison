@@ -7,6 +7,7 @@
     "start-http": "node http & npm test",
     "start-express": "node express & npm test",
     "start-fastify": "node fastify & npm test",
+    "start-koa": "node koa & npm test",
     "test": "autocannon http://localhost:4400/ -d 30s && kill $(lsof -t -i :4400)"
   },
   "keywords": [],
@@ -15,6 +16,8 @@
   "dependencies": {
     "autocannon": "^7.3.0",
     "express": "^4.17.1",
-    "fastify": "^3.16.2"
+    "fastify": "^3.16.2",
+    "koa": "^2.13.1",
+    "koa-router": "^10.0.0"
   }
 }
